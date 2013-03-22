@@ -1,0 +1,11 @@
+{
+    "path": {
+        "app": "app",
+        "dist": "dist"
+    },
+    "project": {
+        "title": "title",
+        "description": "description"
+    },
+    "gaAccount": "XX-00000000-0"
+}
