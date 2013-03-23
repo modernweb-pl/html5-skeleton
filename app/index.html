@@ -3,12 +3,24 @@
     <!-- replace:include('html/common/html-head.html') -->
     <body>
 
-        <div id="wrapper">
+        <div id="wrapper" class="mainpage">
             <!-- replace:include('html/site/header.html') -->
 
             <div class="container">
-                <h1>Hi! Let's do some work now!</h1>
-                <a href="subpage.html">test subpage</a>
+                <div class="row">
+                    <div class="span8">
+                        <section class="box news latest">
+                            <header>
+                                <h2>Aktualności</h2>
+                            </header>
+                            <!-- replace:include('html/site/news-latest.html') -->
+                            <a href="aktualnosci.html" class="more">Pozostałe aktualności</a>
+                        </section>
+                    </div>
+                    <div class="span4">
+                        <!-- replace:include('html/site/sidebar.html') -->
+                    </div>
+                </div>
             </div>
 
             <!-- replace:include('html/site/footer.html') -->
