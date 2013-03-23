@@ -22,11 +22,12 @@ module.exports = function (grunt) {
             livereload: {
                 files: [
                     '<%= path.app %>/*.html',
+                    '<%= path.app %>/html/{,*/}*.html',
                     '{.tmp,<%= path.app %>}/styles/{,*/}*.css',
                     '{.tmp,<%= path.app %>}/scripts/{,*/}*.js',
                     '<%= path.app %>/images/{,*/}*.{png,jpg,jpeg,webp}'
                 ],
-                tasks: ['livereload']
+                tasks: ['includereplace', 'livereload']
             }
         },
         connect: {
@@ -143,14 +144,14 @@ module.exports = function (grunt) {
             }
         },
         includereplace: {
-            dist: {
+            all: {
                 options: {
                     globals: grunt.file.readJSON('config/replace.json'),
                     prefix: '<!-- replace:',
                     suffix: ' -->'
                 },
                 src: '<%= path.app %>/*.html',
-                dest: '<%= path.dist %>'
+                dest: '.tmp/'
             }
         },
         htmlmin: {
@@ -209,6 +210,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'compass:server',
+            'includereplace',
             'livereload-start',
             'connect:livereload',
             'open',
