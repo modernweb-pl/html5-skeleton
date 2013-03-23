@@ -148,9 +148,8 @@ module.exports = function (grunt) {
         cssmin: {
             dist: {
                 files: {
-                    '<%= path.dist %>/styles/site.css': [
-                        '.tmp/styles/{,*/}*.css'
-                    ]
+                    '<%= path.dist %>/styles/site.css': [ '.tmp/styles/site.css' ],
+                    '<%= path.dist %>/styles/site-ie.css': [ '.tmp/styles/site-ie.css' ]
                 }
             }
         },
@@ -173,6 +172,7 @@ module.exports = function (grunt) {
                     cwd: '<%= path.app %>',
                     dest: '<%= path.dist %>',
                     src: [
+                        'scripts/ie/*.js', // @todo replace with usemin
                         '*.{ico,txt}',
                         'fonts/*',
                         '.htaccess'
