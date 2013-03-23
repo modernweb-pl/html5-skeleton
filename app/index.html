@@ -1,33 +1,12 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>[site title]</title>
-        <meta name="description" content="[site description]">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link rel="stylesheet" href="styles/site.css">
-
-        <script>
-            var _gaq=[['_setAccount','UA-38034687-1'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </head>
+    <!-- replace:include('html/common/html-head.html') -->
     <body>
 
         <div class="container">
             <h1>Hi! Let's do some work now!</h1>
         </div>
 
-        <!--[if lt IE 7]>
-            <p class="chromeframe">Używasz <strong>bardzo starej</strong> przeglądarki. Prosimy o <a href="http://browsehappy.com/">zaktualizowanie przeglądarki</a> lub <a href="http://www.google.com/chromeframe/?redirect=true">aktywację Google Chrome Frame</a> aby usprawnić korzystanie z Internetu.</p>
-        <![endif]-->
-
-        <!-- build:js scripts/site.js -->
-        <script src="components/jquery/jquery.js"></script>
-        <!-- endbuild -->
-</body>
+        <!-- replace:include('html/common/html-foot.html') -->
+    </body>
 </html>

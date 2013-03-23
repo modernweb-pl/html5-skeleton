@@ -9,19 +9,22 @@ module.exports = function (grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
-        config: grunt.file.readJSON('config/config.json'),
+        path: {
+            app: "app",
+            dist: "dist"
+        },
         pkg: grunt.file.readJSON('package.json'),
         watch: {
             compass: {
-                files: ['<%= config.path.app %>/styles/{,*/}*.{scss,sass}'],
+                files: ['<%= path.app %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass']
             },
             livereload: {
                 files: [
-                    '<%= config.path.app %>/*.html',
-                    '{.tmp,<%= config.path.app %>}/styles/{,*/}*.css',
-                    '{.tmp,<%= config.path.app %>}/scripts/{,*/}*.js',
-                    '<%= config.path.app %>/images/{,*/}*.{png,jpg,jpeg,webp}'
+                    '<%= path.app %>/*.html',
+                    '{.tmp,<%= path.app %>}/styles/{,*/}*.css',
+                    '{.tmp,<%= path.app %>}/scripts/{,*/}*.js',
+                    '<%= path.app %>/images/{,*/}*.{png,jpg,jpeg,webp}'
                 ],
                 tasks: ['livereload']
             }
@@ -68,7 +71,7 @@ module.exports = function (grunt) {
             }
         },
         clean: {
-            dist: ['.tmp', '<%= config.path.dist %>/*'],
+            dist: ['.tmp', '<%= path.dist %>/*'],
             server: '.tmp'
         },
         jshint: {
@@ -77,8 +80,8 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                '<%= config.path.app %>/scripts/{,*/}*.js',
-                '!<%= config.path.app %>/scripts/vendor/*',
+                '<%= path.app %>/scripts/{,*/}*.js',
+                '!<%= path.app %>/scripts/vendor/*',
                 'test/spec/{,*/}*.js'
             ]
         },
@@ -92,11 +95,11 @@ module.exports = function (grunt) {
         },
         compass: {
             options: {
-                sassDir: '<%= config.path.app %>/styles',
+                sassDir: '<%= path.app %>/styles',
                 cssDir: '.tmp/styles',
-                imagesDir: '<%= config.path.app %>/images',
-                javascriptsDir: '<%= config.path.app %>/scripts',
-                fontsDir: '<%= config.path.app %>/fonts',
+                imagesDir: '<%= path.app %>/images',
+                javascriptsDir: '<%= path.app %>/scripts',
+                fontsDir: '<%= path.app %>/fonts',
                 importPath: 'app/components',
                 config: '.compass.rb'
             },
@@ -108,35 +111,46 @@ module.exports = function (grunt) {
             }
         },
         useminPrepare: {
-            html: '<%= config.path.app %>/index.html',
+            html: '<%= path.app %>/index.html',
             options: {
-                dest: '<%= config.path.dist %>'
+                dest: '<%= path.dist %>'
             }
         },
         usemin: {
-            html: ['<%= config.path.dist %>/{,*/}*.html'],
-            css: ['<%= config.path.dist %>/styles/{,*/}*.css'],
+            html: ['<%= path.dist %>/{,*/}*.html'],
+            css: ['<%= path.dist %>/styles/{,*/}*.css'],
             options: {
-                dirs: ['<%= config.path.dist %>']
+                dirs: ['<%= path.dist %>']
             }
         },
         imagemin: {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%= config.path.app %>/images',
+                    cwd: '<%= path.app %>/images',
                     src: '{,*/}*.{png,jpg,jpeg}',
-                    dest: '<%= config.path.dist %>/images'
+                    dest: '<%= path.dist %>/images'
                 }]
             }
         },
         cssmin: {
             dist: {
                 files: {
-                    '<%= config.path.dist %>/styles/site.css': [
+                    '<%= path.dist %>/styles/site.css': [
                         '.tmp/styles/{,*/}*.css'
                     ]
                 }
+            }
+        },
+        includereplace: {
+            dist: {
+                options: {
+                    globals: grunt.file.readJSON('config/replace.json'),
+                    prefix: '<!-- replace:',
+                    suffix: ' -->'
+                },
+                src: '<%= path.app %>/*.html',
+                dest: '<%= path.dist %>'
             }
         },
         htmlmin: {
@@ -144,9 +158,9 @@ module.exports = function (grunt) {
                 options: {},
                 files: [{
                     expand: true,
-                    cwd: '<%= config.path.app %>',
+                    cwd: '<%= path.dist %>',
                     src: '*.html',
-                    dest: '<%= config.path.dist %>'
+                    dest: '<%= path.dist %>'
                 }]
             }
         },
@@ -155,8 +169,8 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: '<%= config.path.app %>',
-                    dest: '<%= config.path.dist %>',
+                    cwd: '<%= path.app %>',
+                    dest: '<%= path.dist %>',
                     src: [
                         '*.{ico,txt}',
                         'fonts/*',
@@ -168,11 +182,11 @@ module.exports = function (grunt) {
         compress: {
             dist: {
                 options: {
-                    archive: '<%= config.path.dist %>/<%= pkg.name %>.zip'
+                    archive: '<%= path.dist %>/<%= pkg.name %>.zip'
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= config.path.dist %>/',
+                    cwd: '<%= path.dist %>/',
                     src: '**',
                     dest: './'
                 }]
@@ -180,7 +194,7 @@ module.exports = function (grunt) {
         },
         bower: {
             all: {
-                rjsConfig: '<%= config.path.app %>/scripts/main.js'
+                rjsConfig: '<%= path.app %>/scripts/main.js'
             }
         }
     });
@@ -214,6 +228,7 @@ module.exports = function (grunt) {
         'compass:dist',
         'useminPrepare',
         'imagemin',
+        'includereplace',
         'htmlmin',
         'concat',
         'cssmin',
