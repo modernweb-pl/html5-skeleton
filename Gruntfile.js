@@ -10,8 +10,8 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         path: {
-            app: "app",
-            dist: "dist"
+            app: 'app',
+            dist: 'dist'
         },
         pkg: grunt.file.readJSON('package.json'),
         watch: {
@@ -111,11 +111,19 @@ module.exports = function (grunt) {
                 }
             }
         },
-        useminPrepare: {
-            html: '<%= path.app %>/index.html',
-            options: {
-                dest: '<%= path.dist %>'
+        includereplace: {
+            all: {
+                options: {
+                    globals: grunt.file.readJSON('config/replace.json'),
+                    prefix: '<!-- replace:',
+                    suffix: ' -->'
+                },
+                src: '<%= path.app %>/*.html',
+                dest: '.tmp/'
             }
+        },
+        useminPrepare: {
+            html: '.tmp/index.html'
         },
         usemin: {
             html: ['<%= path.dist %>/{,*/}*.html'],
@@ -143,23 +151,12 @@ module.exports = function (grunt) {
                 }
             }
         },
-        includereplace: {
-            all: {
-                options: {
-                    globals: grunt.file.readJSON('config/replace.json'),
-                    prefix: '<!-- replace:',
-                    suffix: ' -->'
-                },
-                src: '<%= path.app %>/*.html',
-                dest: '.tmp/'
-            }
-        },
         htmlmin: {
             dist: {
                 options: {},
                 files: [{
                     expand: true,
-                    cwd: '<%= path.dist %>',
+                    cwd: '.tmp',
                     src: '*.html',
                     dest: '<%= path.dist %>'
                 }]
@@ -228,9 +225,9 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'compass:dist',
+        'includereplace',
         'useminPrepare',
         'imagemin',
-        'includereplace',
         'htmlmin',
         'concat',
         'cssmin',
