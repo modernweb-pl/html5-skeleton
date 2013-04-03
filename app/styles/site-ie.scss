@@ -1,25 +1,3 @@
 html, body {
     height: 100%;
 }
-body {
-    background: url(../images/bg-repeat.jpg) repeat top left;
-    position: relative;
-    z-index: 1;
-
-    &:before, &:after {
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-    &:before {
-        content: "";
-        background: url(../images/bg-repeat-left.jpg) repeat-y top left;
-    }
-    &:after {
-        content: "";
-        background: url(../images/bg-repeat-right.jpg) repeat-y top right;
-    }
-}

@@ -7,20 +7,28 @@
 <!-- replace:include('html/common/html-head.html') -->
     <body>
 
-        <div id="wrapper" class="mainpage">
+        <div id="wrapper">
             <!-- replace:include('html/site/header.html') -->
 
             <div class="container">
+                <div class="jumbotron">
+                    <h1>Hello World!</h1>
+                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <a class="btn btn-large btn-success" href="subpage.html">Get started today</a>
+                </div>
+
+                <hr>
+
                 <div class="row">
-                    <div class="span8">
-                        <section class="box news latest">
-                            <header>
-                                <h2>Aktualności</h2>
-                            </header>
-                            <!-- replace:include('html/site/news-latest.html') -->
-                            <a href="aktualnosci.html" class="more">Pozostałe aktualności</a>
-                        </section>
-                    </div>
+                    <section class="span8">
+                        <header>
+                            <h2>Heading</h2>
+                        </header>
+                        <article>
+                            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                            <p><a class="btn" href="#">View details &raquo;</a></p>
+                        </article>
+                    </section>
                     <div class="span4">
                         <!-- replace:include('html/site/sidebar.html') -->
                     </div>
