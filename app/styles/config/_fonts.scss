@@ -1,0 +1,11 @@
+$fontSansRegular: "OpenSansRegular";
+$fontSansRegularFile: "OpenSans-Regular-webfont";
+@include font-face(
+    $fontSansRegular,
+    font-files(
+        "#{$fontSansRegularFile}.woff",
+        "#{$fontSansRegularFile}.ttf",
+        "#{$fontSansRegularFile}.svg##{$fontSansRegular}"
+    ),
+    "#{$fontSansRegularFile}.eot"
+);

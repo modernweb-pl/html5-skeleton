@@ -1,3 +1,6 @@
-@import "common/config";
-@import "common/bootstrap";
-@import "common/layout";
+@import "config/setup";
+
+@import "site/layout";
+@import "site/elements";
+
+@import "pages/home";
