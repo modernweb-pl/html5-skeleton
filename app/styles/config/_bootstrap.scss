@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v2.3.1
+ * Bootstrap v2.3.2
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -8,55 +8,56 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
-// Core mixins
-@import "sass-bootstrap/lib/mixins";
+// Core variables and mixins
+@import "variables"; // Modify this for custom colors, font-sizes, etc
+@import "bootstrap/mixins";
 
 // CSS Reset
-@import "sass-bootstrap/lib/reset";
+@import "bootstrap/reset";
 
 // Grid system and page structure
-@import "sass-bootstrap/lib/scaffolding";
-@import "sass-bootstrap/lib/grid";
-@import "sass-bootstrap/lib/layouts";
+@import "bootstrap/scaffolding";
+@import "bootstrap/grid";
+@import "bootstrap/layouts";
 
 // Base CSS
-@import "sass-bootstrap/lib/type";
-//@import "sass-bootstrap/lib/code";
-@import "sass-bootstrap/lib/forms";
-//@import "sass-bootstrap/lib/tables";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/forms";
+@import "bootstrap/tables";
 
 // Components: common
-@import "sass-bootstrap/lib/sprites";
-//@import "sass-bootstrap/lib/dropdowns";
-//@import "sass-bootstrap/lib/wells";
-//@import "sass-bootstrap/lib/component-animations";
-//@import "sass-bootstrap/lib/close";
+@import "bootstrap/sprites";
+@import "bootstrap/dropdowns";
+@import "bootstrap/wells";
+@import "bootstrap/component-animations";
+@import "bootstrap/close";
 
 // Components: Buttons & Alerts
-@import "sass-bootstrap/lib/buttons";
-//@import "sass-bootstrap/lib/button-groups";
-//@import "sass-bootstrap/lib/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
+@import "bootstrap/buttons";
+@import "bootstrap/button-groups";
+@import "bootstrap/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
 
 // Components: Nav
-@import "sass-bootstrap/lib/navs";
-@import "sass-bootstrap/lib/navbar";
-//@import "sass-bootstrap/lib/breadcrumbs";
-//@import "sass-bootstrap/lib/pagination";
-//@import "sass-bootstrap/lib/pager";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
 
 // Components: Popovers
-//@import "sass-bootstrap/lib/modals";
-//@import "sass-bootstrap/lib/tooltip";
-//@import "sass-bootstrap/lib/popovers";
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";
+@import "bootstrap/popovers";
 
 // Components: Misc
-//@import "sass-bootstrap/lib/thumbnails";
-//@import "sass-bootstrap/lib/media";
-//@import "sass-bootstrap/lib/labels-badges";
-//@import "sass-bootstrap/lib/progress-bars";
-//@import "sass-bootstrap/lib/accordion";
-//@import "sass-bootstrap/lib/carousel";
-//@import "sass-bootstrap/lib/hero-unit";
+@import "bootstrap/thumbnails";
+@import "bootstrap/media";
+@import "bootstrap/labels-badges";
+@import "bootstrap/progress-bars";
+@import "bootstrap/accordion";
+@import "bootstrap/carousel";
+@import "bootstrap/hero-unit";
 
 // Utility classes
-@import "sass-bootstrap/lib/utilities"; // Has to be last to override when necessary
+@import "bootstrap/utilities"; // Has to be last to override when necessary

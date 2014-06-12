@@ -1,8 +1,0 @@
-{
-    "dependencies": {
-        "modernizr": "2.6.x",
-        "sass-bootstrap": "2.3.x",
-        "jquery": "1.9.x"
-    },
-    "devDependencies": {}
-}

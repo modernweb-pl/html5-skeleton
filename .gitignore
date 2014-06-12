@@ -3,6 +3,5 @@ nbproject
 node_modules
 dist
 .tmp
-.sass-cache
 app/images/sprites/*.png
-app/components
+vendor

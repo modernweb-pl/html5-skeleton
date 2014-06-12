@@ -1,8 +1,4 @@
 'use strict';
-var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-var mountFolder = function (connect, dir) {
-    return connect.static(require('path').resolve(dir));
-};
 
 module.exports = function (grunt) {
     // load all grunt tasks
@@ -11,102 +7,43 @@ module.exports = function (grunt) {
     grunt.initConfig({
         path: {
             app: 'app',
+            tmp: '.tmp',
             dist: 'dist'
         },
-        pkg: grunt.file.readJSON('package.json'),
-        watch: {
-            compass: {
-                files: ['<%= path.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass']
-            },
-            livereload: {
-                files: [
-                    '<%= path.app %>/*.html',
-                    '<%= path.app %>/html/{,*/}*.html',
-                    '{.tmp,<%= path.app %>}/styles/{,*/}*.css',
-                    '{.tmp,<%= path.app %>}/scripts/{,*/}*.js',
-                    '<%= path.app %>/images/{,*/}*.{png,jpg,jpeg,webp}'
-                ],
-                tasks: ['includereplace', 'livereload']
-            }
-        },
-        connect: {
-            options: {
-                port: 9000,
-                hostname: '0.0.0.0'
-            },
-            livereload: {
-                options: {
-                    middleware: function (connect) {
-                        return [
-                            lrSnippet,
-                            mountFolder(connect, '.tmp'),
-                            mountFolder(connect, 'app')
-                        ];
-                    }
-                }
-            },
-            test: {
-                options: {
-                    middleware: function (connect) {
-                        return [
-                            mountFolder(connect, '.tmp'),
-                            mountFolder(connect, 'test')
-                        ];
-                    }
-                }
-            },
-            dist: {
-                options: {
-                    middleware: function (connect) {
-                        return [
-                            mountFolder(connect, 'dist')
-                        ];
-                    }
-                }
-            }
-        },
-        open: {
-            server: {
-                path: 'http://localhost:<%= connect.options.port %>'
-            }
-        },
+        package: grunt.file.readJSON('package.json'),
         clean: {
-            dist: ['.tmp', '<%= path.dist %>/*'],
-            server: '.tmp'
-        },
-        jshint: {
-            options: {
-                jshintrc: '.jshintrc'
-            },
-            all: [
-                'Gruntfile.js',
-                '<%= path.app %>/scripts/{,*/}*.js',
-                '!<%= path.app %>/scripts/vendor/*',
-                'test/spec/{,*/}*.js'
+            dist: [
+                '<%= path.dist %>/*',
+                '<%= path.tmp %>/*',
+                '!<%= compass.options.cacheDir %>'
+            ],
+            server: [
+                '<%= path.tmp %>/*',
+                '!<%= compass.options.cacheDir %>'
             ]
-        },
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://localhost:<%= connect.options.port %>/index.html']
-                }
-            }
         },
         compass: {
             options: {
                 sassDir: '<%= path.app %>/styles',
-                cssDir: '.tmp/styles',
+                cssDir: '<%= path.tmp %>/styles',
                 imagesDir: '<%= path.app %>/images',
                 javascriptsDir: '<%= path.app %>/scripts',
                 fontsDir: '<%= path.app %>/fonts',
-                importPath: 'app/components',
-                config: '.compass.rb'
+                cacheDir: '<%= path.tmp %>/.sass',
+                //relativeAssets: true,
+                importPath: [
+                    'vendor/bootstrap-sass-official/vendor/assets/stylesheets'
+                ]
             },
-            dist: {},
+            dist: {
+                options: {
+                    outputStyle: 'compressed'
+                }
+
+            },
             server: {
                 options: {
+                    outputStyle: 'expanded',
                     debugInfo: true
                 }
             }
@@ -118,14 +55,58 @@ module.exports = function (grunt) {
                     prefix: '<!-- replace:',
                     suffix: ' -->'
                 },
-                src: '<%= path.app %>/*.html',
-                dest: '.tmp/'
+                files: [{
+                    src: '*.html',
+                    dest: '<%= path.tmp %>/',
+                    expand: true,
+                    cwd: '<%= path.app %>'
+                }]
+
+            }
+        },
+        connect: {
+            options: {
+                port: 9000,
+                hostname: '*'
+            },
+            livereload: {
+                options: {
+                    livereload: true,
+                    base: ['<%= path.tmp %>', '<%= path.app %>', '.' ]
+                }
+            },
+            dist: {
+                options: {
+                    base: '<%= path.dist %>',
+                    keepalive: true
+                }
+            }
+        },
+        watch: {
+            compass: {
+                files: ['<%= path.app %>/styles/{,*/}*.scss'],
+                tasks: ['compass:server']
+            },
+            html: {
+                files: ['<%= path.app %>/{,**/}*.html'],
+                tasks: ['includereplace']
+            },
+            livereload: {
+                options: {
+                    livereload: true
+                },
+                files: [
+                    '<%= path.tmp %>/{,**/}*.html',
+                    '<%= path.tmp %>/styles/{,*/}*.css',
+                    '{<%= path.tmp %>,<%= path.app %>}/scripts/{,*/}*.js',
+                    '<%= path.app %>/images/{,*/}*.{png,jpg,jpeg,webp}'
+                ]
             }
         },
         useminPrepare: {
-            html: '.tmp/index.html',
+            html: '<%= path.tmp %>/index.html',
             options: {
-                dest: '<%= path.dist %>'
+                dest: '<%= path.dist %>/'
             }
         },
         usemin: {
@@ -140,17 +121,9 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= path.app %>/images',
-                    src: '{,*/}*.{png,jpg,jpeg}',
+                    src: '**/*.{png,jpg,gif}',
                     dest: '<%= path.dist %>/images'
                 }]
-            }
-        },
-        cssmin: {
-            dist: {
-                files: {
-                    '<%= path.dist %>/styles/site.css': [ '.tmp/styles/site.css' ],
-                    '<%= path.dist %>/styles/site-ie.css': [ '.tmp/styles/site-ie.css' ]
-                }
             }
         },
         htmlmin: {
@@ -162,6 +135,17 @@ module.exports = function (grunt) {
                     src: '*.html',
                     dest: '<%= path.dist %>'
                 }]
+            }
+        },
+        cssmin: {
+            options: {
+                keepSpecialComments: 0
+            },
+            dist: {
+                expand: true,
+                cwd: '.tmp/styles/',
+                src: '*.css',
+                dest: '<%= path.dist %>/styles/'
             }
         },
         copy: {
@@ -183,47 +167,33 @@ module.exports = function (grunt) {
         compress: {
             dist: {
                 options: {
-                    archive: '<%= path.dist %>/<%= pkg.name %>.zip'
+                    archive: '<%= path.dist %>/<%= package.name %>.zip',
+                    pretty: true
                 },
                 files: [{
                     expand: true,
+                    dot: true,
                     cwd: '<%= path.dist %>/',
                     src: '**',
                     dest: './'
                 }]
             }
-        },
-        bower: {
-            all: {
-                rjsConfig: '<%= path.app %>/scripts/main.js'
-            }
         }
     });
 
-    grunt.renameTask('regarde', 'watch');
-
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
-            return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
+            return grunt.task.run(['build', 'connect:dist']);
         }
 
         grunt.task.run([
             'clean:server',
             'compass:server',
             'includereplace',
-            'livereload-start',
             'connect:livereload',
-            'open',
             'watch'
         ]);
     });
-
-    grunt.registerTask('test', [
-        'clean:server',
-        'compass',
-        'connect:test',
-        'mocha'
-    ]);
 
     grunt.registerTask('build', [
         'clean:dist',
@@ -241,8 +211,6 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'jshint',
-        'test',
         'build'
     ]);
 };
