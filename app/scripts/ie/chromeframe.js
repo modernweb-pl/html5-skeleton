@@ -1,6 +1,6 @@
-'use strict';
-
 function chromeframe() {
+    'use strict';
+
     var frame = document.createElement('div');
     frame.setAttribute('class', 'chromeframe');
     frame.style.backgroundColor = '#2c4142';

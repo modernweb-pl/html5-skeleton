@@ -1,3 +1,4 @@
+/* jshint node:true */
 'use strict';
 
 module.exports = function (grunt) {
@@ -178,6 +179,15 @@ module.exports = function (grunt) {
                     dest: './'
                 }]
             }
+        },
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc'
+            },
+            dist: [
+                'Gruntfile.js',
+                '<%= path.app %>/scripts/{,*/}*.js'
+            ]
         }
     });
 
@@ -211,6 +221,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
+        'jshint',
         'build'
     ]);
 };
