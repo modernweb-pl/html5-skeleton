@@ -1,0 +1,11 @@
+.navbar {
+  border-radius: $navbar-border-radius;
+}
+
+.navbar-nav {
+  margin: 0;
+
+  > li {
+    float: none;
+  }
+}

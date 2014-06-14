@@ -1,7 +1,7 @@
 {
     "name": "html5-skeleton",
     "dependencies": {
-        "bootstrap-sass-official": "v2.3.2.2",
+        "bootstrap-sass-official": "3.1.1",
         "jquery": "1.9.1"
     },
     "devDependencies": {}
