@@ -172,7 +172,6 @@ module.exports = function (grunt) {
                     cwd: '<%= path.app %>',
                     dest: '<%= path.dist %>',
                     src: [
-                        'scripts/ie/*.js', // @todo replace with usemin
                         '*.{ico,txt}',
                         'fonts/*',
                         '.htaccess'
