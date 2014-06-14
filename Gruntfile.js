@@ -52,12 +52,25 @@ module.exports = function (grunt) {
             options: {
                 globals: grunt.file.readJSON('config/replace.json')
             },
-            all: {
+            html: {
                 files: [{
                     src: '*.html',
-                    dest: '<%= path.tmp %>/',
                     expand: true,
-                    cwd: '<%= path.app %>'
+                    cwd: '<%= path.app %>',
+                    dest: '<%= path.tmp %>/'
+                }]
+            },
+            version: {
+                options: {
+                    globals: {
+                        created: '<%= grunt.template.today("dd.mm.yyyy HH:MM:ss") %>'
+                    }
+                },
+                files: [{
+                    src: '{,**/}*.{html,css,js}',
+                    expand: true,
+                    cwd: '<%= path.dist %>',
+                    dest: '<%= path.dist %>/'
                 }]
             }
         },
@@ -86,7 +99,7 @@ module.exports = function (grunt) {
             },
             html: {
                 files: ['<%= path.app %>/{,**/}*.html'],
-                tasks: ['includereplace']
+                tasks: ['includereplace:html']
             },
             livereload: {
                 options: {
@@ -134,9 +147,15 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        uglify: {
+            options: {
+                banner: '/* built on @@created */\n'
+            }
+        },
         cssmin: {
             options: {
-                keepSpecialComments: 0
+                keepSpecialComments: 0,
+                banner: '/* built on @@created */'
             },
             dist: {
                 expand: true,
@@ -164,7 +183,7 @@ module.exports = function (grunt) {
         compress: {
             dist: {
                 options: {
-                    archive: '<%= path.dist %>/<%= package.name %>.zip',
+                    archive: '<%= path.dist %>/<%= package.name %>_<%= grunt.template.today("yyyymmdd-HHMM") %>.zip',
                     pretty: true
                 },
                 files: [{
@@ -195,7 +214,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'compass:server',
-            'includereplace',
+            'includereplace:html',
             'connect:livereload',
             'watch'
         ]);
@@ -204,7 +223,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'compass:dist',
-        'includereplace',
+        'includereplace:html',
         'useminPrepare',
         'imagemin',
         'htmlmin',
@@ -213,6 +232,7 @@ module.exports = function (grunt) {
         'uglify',
         'copy',
         'usemin',
+        'includereplace:version',
         'compress:dist'
     ]);
 
