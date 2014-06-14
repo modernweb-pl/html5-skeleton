@@ -44,8 +44,7 @@ module.exports = function (grunt) {
             },
             server: {
                 options: {
-                    outputStyle: 'expanded',
-                    debugInfo: true
+                    outputStyle: 'expanded'
                 }
             }
         },

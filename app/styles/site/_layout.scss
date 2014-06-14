@@ -5,7 +5,9 @@
 .navbar-nav {
   margin: 0;
 
-  > li {
-    float: none;
+  @media (min-width: $grid-float-breakpoint) {
+    > li {
+      float: none;
+    }
   }
 }
