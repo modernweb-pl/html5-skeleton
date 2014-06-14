@@ -50,19 +50,16 @@ module.exports = function (grunt) {
             }
         },
         includereplace: {
+            options: {
+                globals: grunt.file.readJSON('config/replace.json')
+            },
             all: {
-                options: {
-                    globals: grunt.file.readJSON('config/replace.json'),
-                    prefix: '<!-- replace:',
-                    suffix: ' -->'
-                },
                 files: [{
                     src: '*.html',
                     dest: '<%= path.tmp %>/',
                     expand: true,
                     cwd: '<%= path.app %>'
                 }]
-
             }
         },
         connect: {

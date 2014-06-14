@@ -2,14 +2,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<!-- replace:metaDescription -->">
+    <meta name="description" content="@@metaDescription">
 
-    <title><!-- replace:metaTitle --></title>
+    <title>@@metaTitle</title>
 
-    <link rel="stylesheet" href="styles/site.css">
+    <link href="styles/site.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
-    <link rel="stylesheet" href="styles/site-ie.css">
+    <link href="styles/site-ie.css" rel="stylesheet">
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -18,5 +18,5 @@
     <script src="scripts/ie/chromeframe.js"></script>
     <![endif]-->
 
-    <!-- replace:include('analytics.html') -->
+    @@include('analytics.html')
 </head>

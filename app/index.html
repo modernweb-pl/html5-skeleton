@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
-<!-- replace:include('html/common/html-head.html') -->
+@@include('html/common/html-head.html')
 <body>
 
     <div id="wrapper">
-        <!-- replace:include('html/site/header.html') -->
+        @@include('html/site/header.html', {"nav-active-1": "active"})
 
         <div class="container">
             <div class="jumbotron">
@@ -24,14 +24,14 @@
                     </article>
                 </section>
                 <div class="col-md-4">
-                    <!-- replace:include('html/site/sidebar.html') -->
+                    @@include('html/site/sidebar.html')
                 </div>
             </div>
         </div>
 
-        <!-- replace:include('html/site/footer.html') -->
+        @@include('html/site/footer.html')
     </div>
 
-    <!-- replace:include('html/common/html-foot.html') -->
+    @@include('html/common/scripts.html')
 </body>
 </html>
