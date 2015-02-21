@@ -28,6 +28,7 @@ module.exports = function (grunt) {
                 sassDir: '<%= path.app %>/styles',
                 cssDir: '<%= path.tmp %>/styles',
                 imagesDir: '<%= path.app %>/images',
+                httpGeneratedImagesPath: '../images',
                 javascriptsDir: '<%= path.app %>/scripts',
                 fontsDir: '<%= path.app %>/fonts',
                 cacheDir: '<%= path.tmp %>/.sass',
