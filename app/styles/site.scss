@@ -1,6 +1,21 @@
-@import "config/setup";
+@import "config/fonts";
+@import "config/bootstrap-variables";
+@import "config/bootstrap";
 
-@import "site/layout";
-@import "site/elements";
+@import "layout/all";
+@import "pages/home/all";
 
-@import "pages/home";
+@media (min-width: $screen-sm-min) {
+  @import "layout/sm";
+  @import "pages/home/sm";
+}
+
+@media (min-width: $screen-md-min) {
+  @import "layout/md";
+  @import "pages/home/md";
+}
+
+@media (min-width: $screen-lg-min) {
+  @import "layout/lg";
+  @import "pages/home/lg";
+}
