@@ -3,35 +3,43 @@
 @@include('html/common/html-head.html')
 <body>
 
-    <div id="wrapper">
-        @@include('html/site/header.html', {"nav-active-1": "active"})
+<div id="wrapper">
+  @@include('html/site/header.html', {"nav-active-1": "active"})
 
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Hello World!</h1>
-                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-                <p><a class="btn btn-lg btn-success" href="subpage.html" role="button">Get started today</a></p>
-            </div>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Hello World!</h1>
 
-            <div class="row">
-                <section class="col-md-8">
-                    <header>
-                        <h2>Heading</h2>
-                    </header>
-                    <article>
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-                        <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-                    </article>
-                </section>
-                <div class="col-md-4">
-                    @@include('html/site/sidebar.html')
-                </div>
-            </div>
-        </div>
+      <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus,
+        tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+        amet.</p>
 
-        @@include('html/site/footer.html')
+      <p><a class="btn btn-lg btn-success" href="subpage.html" role="button">Get started today</a>
+      </p>
     </div>
 
-    @@include('html/common/scripts.html')
+    <div class="row">
+      <section class="col-md-8">
+        <header>
+          <h2>Heading</h2>
+        </header>
+        <article>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam
+            porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+
+          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+        </article>
+      </section>
+      <div class="col-md-4">
+        @@include('html/site/sidebar.html')
+      </div>
+    </div>
+  </div>
+
+  @@include('html/site/footer.html')
+</div>
+
+@@include('html/common/scripts.html')
 </body>
 </html>

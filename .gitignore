@@ -1,7 +1,8 @@
 nbproject
-.idea
+
+.idea/workspace.xml
+.idea/watcherTasks.xml
+
 node_modules
-dist
-.tmp
+build
 app/images/sprites/*.png
-vendor
