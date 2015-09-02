@@ -18,6 +18,10 @@ paths.vendor = 'node_modules';
 module.exports = {
   paths: paths,
 
+  clean: [
+    paths.build + '/*'
+  ],
+
   sass: {
     src: paths.styles,
     dest: path.join(paths.build, dirs.styles),
