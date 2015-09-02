@@ -5,4 +5,4 @@ nbproject
 
 node_modules
 build
-app/images/sprites/*.png
+app/styles/config/_sprites.scss

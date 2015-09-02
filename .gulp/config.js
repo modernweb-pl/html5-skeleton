@@ -1,12 +1,17 @@
 var path = require('path');
 
+var dirs = {};
+dirs.images = 'images';
+dirs.styles = 'styles';
+dirs.scripts = 'scripts';
+
 var paths = {};
 paths.base = '.';
 paths.src = paths.base + '/app';
 paths.build = paths.base + '/build';
-paths.images = paths.src + '/images';
-paths.styles = 'styles';
-paths.scripts = paths.src + '/scripts';
+paths.images = path.join(paths.src, dirs.images);
+paths.styles = path.join(paths.src, dirs.styles);
+paths.scripts = path.join(paths.src, dirs.scripts);
 paths.views = paths.src;
 paths.vendor = 'node_modules';
 
@@ -14,8 +19,8 @@ module.exports = {
   paths: paths,
 
   sass: {
-    src: path.join(paths.src, paths.styles),
-    dest: path.join(paths.build, paths.styles),
+    src: paths.styles,
+    dest: path.join(paths.build, dirs.styles),
     options: {
       includePaths: [
         paths.vendor + '/bootstrap-sass/assets/stylesheets',
@@ -25,6 +30,22 @@ module.exports = {
     autoprefixer: {
       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
       cascade: false
+    }
+  },
+
+  sprites: {
+    src: paths.images + '/sprites/*.png',
+    dest: {
+      css: path.join(paths.styles, 'config'),
+      image: path.join(paths.build, dirs.images)
+    },
+    options: {
+      cssName: '_sprites.scss',
+      imgName: 'sprites.png',
+      imgPath: path.join('/', dirs.images, '/sprites.png'),
+      cssVarMap: function(sprite) {
+        sprite.name = 'sprite-' + sprite.name;
+      }
     }
   }
 };
