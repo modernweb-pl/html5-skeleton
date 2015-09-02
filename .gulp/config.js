@@ -22,6 +22,14 @@ module.exports = {
     paths.build + '/*'
   ],
 
+  browserify: {
+    bundles: [{
+      entries: './' + paths.scripts + '/index.js',
+      dest: path.join(paths.build, dirs.scripts),
+      outputName: 'website.js'
+    }]
+  },
+
   sass: {
     src: paths.styles,
     dest: path.join(paths.build, dirs.styles),
