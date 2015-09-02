@@ -1,12 +1,2 @@
-//@todo font-face
-//$fontSansRegular: "OpenSansRegular";
-//$fontSansRegularFile: "OpenSans-Regular-webfont";
-//@include font-face(
-//    $fontSansRegular,
-//    font-files(
-//        "#{$fontSansRegularFile}.woff",
-//        "#{$fontSansRegularFile}.ttf",
-//        "#{$fontSansRegularFile}.svg##{$fontSansRegular}"
-//    ),
-//    "#{$fontSansRegularFile}.eot"
-//);
+// example usage of font-face mixin
+// @include font-face('Raleway', '/fonts/raleway/raleway-regular');
