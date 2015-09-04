@@ -28,7 +28,7 @@ module.exports = {
     bundles: [{
       entries: './' + paths.scripts + '/index.js',
       dest: path.join(paths.build, dirs.scripts),
-      outputName: 'website.js'
+      outputName: 'app.js'
     }]
   },
 
