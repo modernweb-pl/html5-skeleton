@@ -53,6 +53,14 @@ module.exports = {
     }
   },
 
+  minify: {
+    src: path.join(paths.build, dirs.styles),
+    dest: path.join(paths.build, dirs.styles),
+    options: {
+      keepBreaks: true
+    }
+  },
+
   sprites: {
     src: paths.images + '/sprites/*.png',
     dest: {
