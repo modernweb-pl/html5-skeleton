@@ -56,7 +56,7 @@ module.exports = {
     options: {
       cssName: '_sprites.scss',
       imgName: 'sprites.png',
-      imgPath: path.join('/', dirs.images, '/sprites.png'),
+      imgPath: path.join('../', dirs.images, '/sprites.png'),
       cssVarMap: function(sprite) {
         sprite.name = 'sprite-' + sprite.name;
       }
