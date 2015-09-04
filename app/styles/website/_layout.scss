@@ -1,27 +1,3 @@
 .site-name {
-  position: relative;
-  padding-left: $sprite-html5css3-width + 10;
   margin-bottom: $line-height-computed;
-  &:before {
-    display: block;
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 0;
-    @include sprite($sprite-html5css3);
-  }
-}
-
-.navbar {
-  border-radius: $navbar-border-radius;
-}
-
-.navbar-nav {
-  margin: 0;
-
-  @media (min-width: $grid-float-breakpoint) {
-    > li {
-      float: none;
-    }
-  }
 }
