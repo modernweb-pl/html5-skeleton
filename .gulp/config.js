@@ -57,7 +57,7 @@ module.exports = {
     src: path.join(paths.build, dirs.styles),
     dest: path.join(paths.build, dirs.styles),
     options: {
-      keepBreaks: true
+      keepSpecialComments: 0 // remove all
     }
   },
 
@@ -86,8 +86,8 @@ module.exports = {
   },
 
   connect: { // https://github.com/avevlad/gulp-connect#api
-    root: [paths.build],
+    root: [paths.build, paths.src],
     host: '*',
-    port: 8080
+    port: 9000
   }
 };

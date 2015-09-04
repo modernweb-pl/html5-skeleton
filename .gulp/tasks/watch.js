@@ -14,12 +14,12 @@ gulp.task('watch', ['watchify'], function() {
 
   // sass
   gulp.watch(config.sass.src + '/**/*.scss', ['sass']);
-  gulp.watch(config.sass.dest + '/*.css', livereload.changed);
+  gulp.watch(config.sass.dest + '/**/*.css', livereload.changed);
 
   // scripts
-  gulp.watch(config.paths.build + '/{,**/}*.js', livereload.changed);
+  gulp.watch(config.paths.build + '/**/*.js', livereload.changed);
 
   // views
-  gulp.watch(config.paths.views + '/{,**/}*.html', ['include']);
-  gulp.watch(config.paths.build + '/{,**/}*.html', livereload.changed);
+  gulp.watch(config.paths.views + '/**/*.html', ['include']);
+  gulp.watch(config.paths.build + '/**/*.html', livereload.changed);
 });
