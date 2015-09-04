@@ -16,9 +16,9 @@
   "devDependencies": {
     "browserify": "^11.0.0",
     "dateformat": "^1.0.11",
-    "del": "^1.1.1",
+    "del": "^2.0.1",
     "gulp": "^3.8.11",
-    "gulp-autoprefixer": "^2.3.0",
+    "gulp-autoprefixer": "^3.0.1",
     "gulp-connect": "^2.2.0",
     "gulp-file-include": "^0.13.7",
     "gulp-header": "^1.7.1",
