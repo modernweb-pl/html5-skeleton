@@ -1,4 +1,6 @@
 var path = require('path');
+var dateFormat = require('dateformat');
+var package = require('../package.json');
 
 var dirs = {};
 dirs.fonts = 'fonts';
@@ -123,5 +125,11 @@ module.exports = {
       collapseWhitespace: true,
       conservativeCollapse: true
     }
+  },
+
+  zip: {
+    src: paths.build + '/**',
+    dest: paths.base,
+    archive: [package.name, '_', dateFormat(new Date(), 'yyyymmdd-HHMM'), '.zip'].join('')
   }
 };

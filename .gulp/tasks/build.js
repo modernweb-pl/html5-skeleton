@@ -5,5 +5,6 @@ gulp.task('build', sequence(
     'clean',
     ['sprites', 'include', 'copy'],
     ['minify-css', 'uglify-js', 'imagemin', 'htmlmin'],
-    'version'
+    'version',
+    'zip'
 ));
