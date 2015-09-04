@@ -82,6 +82,14 @@ module.exports = {
     port: 9000
   },
 
+  fonts: {
+    dest: path.join(paths.build, dirs.fonts),
+    vendors: {
+      'bootstrap': paths.vendor + '/bootstrap-sass/assets/fonts/bootstrap/*',
+      'font-awesome': paths.vendor + '/font-awesome/fonts/*'
+    }
+  },
+
   // production build stuff
 
   copy: {

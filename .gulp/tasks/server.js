@@ -5,7 +5,7 @@ var sequence = require('gulp-sequence');
 gulp.task('server', function() {
   sequence(
       'clean',
-      ['sprites', 'include'],
+      ['sprites', 'include', 'fonts'],
       'sass',
       ['connect', 'watch'],
       function() {
