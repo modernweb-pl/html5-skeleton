@@ -13,8 +13,8 @@ gulp.task('watch', ['watchify'], function() {
   gulp.watch(path.join(sprites.dest.image, sprites.options.imgName), livereload.changed);
 
   // sass
-  gulp.watch(config.sass.src + '/**/*.scss', ['sass']);
-  gulp.watch(config.sass.dest + '/**/*.css', livereload.changed);
+  gulp.watch(config.paths.src + '/**/*.scss', ['sass']);
+  gulp.watch(config.paths.build + '/**/*.css', livereload.changed);
 
   // scripts
   gulp.watch(config.paths.build + '/**/*.js', livereload.changed);
