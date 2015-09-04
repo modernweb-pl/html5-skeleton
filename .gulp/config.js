@@ -35,12 +35,6 @@ module.exports = {
     }]
   },
 
-  uglify: {
-    src: path.join(paths.build, dirs.scripts),
-    dest: path.join(paths.build, dirs.scripts),
-    options: {}
-  },
-
   sass: {
     src: paths.styles,
     dest: path.join(paths.build, dirs.styles),
@@ -53,14 +47,6 @@ module.exports = {
     autoprefixer: {
       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
       cascade: false
-    }
-  },
-
-  minify: {
-    src: path.join(paths.build, dirs.styles),
-    dest: path.join(paths.build, dirs.styles),
-    options: {
-      keepSpecialComments: 0 // remove all
     }
   },
 
@@ -105,5 +91,27 @@ module.exports = {
         paths.fonts + '/**'
     ],
     dest: paths.build
+  },
+
+  uglify: {
+    src: path.join(paths.build, dirs.scripts),
+    dest: path.join(paths.build, dirs.scripts),
+    options: {}
+  },
+
+  minify: {
+    src: path.join(paths.build, dirs.styles),
+    dest: path.join(paths.build, dirs.styles),
+    options: {
+      keepSpecialComments: 0 // remove all
+    }
+  },
+
+  imagemin: {
+    src: path.join(paths.build, dirs.images) + '/**',
+    dest: path.join(paths.build, dirs.images),
+    options: {
+      progressive: true
+    }
   }
 };
