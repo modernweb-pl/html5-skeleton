@@ -32,6 +32,12 @@ module.exports = {
     }]
   },
 
+  uglify: {
+    src: path.join(paths.build, dirs.scripts),
+    dest: path.join(paths.build, dirs.scripts),
+    options: {}
+  },
+
   sass: {
     src: paths.styles,
     dest: path.join(paths.build, dirs.styles),
