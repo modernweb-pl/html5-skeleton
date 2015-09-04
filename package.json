@@ -1,12 +1,12 @@
 {
   "name": "html5-skeleton",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Simple skeleton app for quick development of multi page HTML5 websites.",
   "author": "Rafal Galka <rafal.galka@modernweb.pl>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rafalgalka/html5-skeleton.git"
+    "url": "https://github.com/Hagith/html5-skeleton.git"
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.5",
@@ -40,6 +40,6 @@
     "watchify": "^3.4.0"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">=0.12"
   }
 }
