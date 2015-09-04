@@ -80,15 +80,15 @@ module.exports = {
     port: 9000
   },
 
-  // production stuff
+  // production build stuff
 
   copy: {
     base: paths.src,
     src: [
-        paths.src + '/{.htaccess,*.ico,robots.txt,crossdomain.xml}',
-        paths.images + '/**',
-        '!' + paths.images + '/sprites{,/**}',
-        paths.fonts + '/**'
+      paths.src + '/{.htaccess,*.ico,robots.txt,crossdomain.xml}',
+      paths.images + '/**',
+      '!' + paths.images + '/sprites{,/**}',
+      paths.fonts + '/**'
     ],
     dest: paths.build
   },
@@ -112,6 +112,16 @@ module.exports = {
     dest: path.join(paths.build, dirs.images),
     options: {
       progressive: true
+    }
+  },
+
+  htmlmin: {
+    src: paths.build + '/**/*.html',
+    dest: paths.build,
+    options: { // https://github.com/kangax/html-minifier#options-quick-reference
+      removeComments: true,
+      collapseWhitespace: true,
+      conservativeCollapse: true
     }
   }
 };
