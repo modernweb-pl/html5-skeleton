@@ -3,6 +3,6 @@ var sequence = require('gulp-sequence');
 
 gulp.task('build', sequence(
     'clean',
-    'sprites',
+    ['sprites', 'include'],
     ['sass', 'browserify']
 ));
