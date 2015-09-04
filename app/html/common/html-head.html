@@ -22,7 +22,9 @@
     </script>
     <![endif]-->
 
-    @@include('analytics.html')
+    @@if (context.gaAccount) {
+      @@include('analytics.html')
+    }
 
     <!-- built on @@created -->
 </head>

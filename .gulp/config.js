@@ -4,11 +4,13 @@ var dirs = {};
 dirs.images = 'images';
 dirs.styles = 'styles';
 dirs.scripts = 'scripts';
+dirs.config = 'config';
 
 var paths = {};
 paths.base = '.';
 paths.src = paths.base + '/app';
 paths.build = paths.base + '/build';
+paths.config = path.join(paths.src, dirs.config);
 paths.images = path.join(paths.src, dirs.images);
 paths.styles = path.join(paths.src, dirs.styles);
 paths.scripts = path.join(paths.src, dirs.scripts);
@@ -58,6 +60,14 @@ module.exports = {
       cssVarMap: function(sprite) {
         sprite.name = 'sprite-' + sprite.name;
       }
+    }
+  },
+
+  include: {
+    src: paths.src + '/*.html',
+    dest: paths.build,
+    options: { // https://github.com/coderhaoxin/gulp-file-include#options
+      context: require('../' + paths.config + '/replace')
     }
   }
 };

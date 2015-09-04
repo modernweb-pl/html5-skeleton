@@ -20,5 +20,6 @@ gulp.task('watch', ['watchify'], function() {
   gulp.watch(config.paths.build + '/{,**/}*.js', livereload.changed);
 
   // views
-  gulp.watch(config.paths.views + '/{,**/}*.html', livereload.changed);
+  gulp.watch(config.paths.views + '/{,**/}*.html', ['include']);
+  gulp.watch(config.paths.build + '/{,**/}*.html', livereload.changed);
 });
