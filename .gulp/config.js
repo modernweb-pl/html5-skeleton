@@ -1,19 +1,22 @@
 var path = require('path');
 
 var dirs = {};
+dirs.fonts = 'fonts';
 dirs.images = 'images';
-dirs.styles = 'styles';
 dirs.scripts = 'scripts';
+dirs.styles = 'styles';
 dirs.config = 'config';
 
 var paths = {};
 paths.base = '.';
 paths.src = paths.base + '/app';
 paths.build = paths.base + '/build';
+
 paths.config = path.join(paths.src, dirs.config);
+paths.fonts = path.join(paths.src, dirs.fonts);
 paths.images = path.join(paths.src, dirs.images);
-paths.styles = path.join(paths.src, dirs.styles);
 paths.scripts = path.join(paths.src, dirs.scripts);
+paths.styles = path.join(paths.src, dirs.styles);
 paths.views = paths.src;
 paths.vendor = 'node_modules';
 
@@ -89,5 +92,18 @@ module.exports = {
     root: [paths.build, paths.src],
     host: '*',
     port: 9000
+  },
+
+  // production stuff
+
+  copy: {
+    base: paths.src,
+    src: [
+        paths.src + '/{.htaccess,*.ico,robots.txt,crossdomain.xml}',
+        paths.images + '/**',
+        '!' + paths.images + '/sprites{,/**}',
+        paths.fonts + '/**'
+    ],
+    dest: paths.build
   }
 };
