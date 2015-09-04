@@ -69,5 +69,11 @@ module.exports = {
     options: { // https://github.com/coderhaoxin/gulp-file-include#options
       context: require('../' + paths.config + '/replace')
     }
+  },
+
+  connect: { // https://github.com/avevlad/gulp-connect#api
+    root: [paths.build],
+    host: '*',
+    port: 8080
   }
 };
