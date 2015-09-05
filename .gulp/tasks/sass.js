@@ -7,7 +7,7 @@ var errorHandler = require('../utils/error_handler');
 var config = require('../config').sass;
 
 gulp.task('sass', function() {
-  return gulp.src(config.src + '/*.scss')
+  return gulp.src(config.src + '/*.{scss,sass}')
       .pipe(sourcemaps.init())
       .pipe(plumber({
         errorHandler: errorHandler
