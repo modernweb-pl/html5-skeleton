@@ -11,6 +11,7 @@
  */
 var gulp = require('gulp');
 var watchify = require('watchify');
+var partialify = require('partialify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var _ = require('lodash');
@@ -37,6 +38,7 @@ var task = function(callback, watch) {
     }
 
     var b = browserify(bundleConfig);
+    b.transform(partialify);
 
     // Apply additional browserify options
     for (var key in options)
