@@ -11,9 +11,10 @@
  */
 var gulp = require('gulp');
 var watchify = require('watchify');
-var partialify = require('partialify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var sourcemaps = require('gulp-sourcemaps');
 var _ = require('lodash');
 
 var bundleLogger = require('../utils/bundle_logger');
@@ -38,20 +39,23 @@ var task = function(callback, watch) {
     }
 
     var b = browserify(bundleConfig);
-    b.transform(partialify);
 
     // Apply additional browserify options
-    for (var key in options)
+    for (var key in options) {
       b[key](options[key]);
+    }
 
     var bundle = function() {
       bundleLogger.start(bundleConfig.outputName);
 
       return b.bundle()
-          .on('error', handleErrors)
-          .pipe(source(bundleConfig.outputName))
-          .pipe(gulp.dest(bundleConfig.dest))
-          .on('end', reportFinished);
+        .on('error', handleErrors)
+        .pipe(source(bundleConfig.outputName))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(bundleConfig.dest))
+        .on('end', reportFinished);
     };
 
     if (watch) {
