@@ -1,4 +1,4 @@
-# HTML5 Skeleton [![Dependency Status](https://david-dm.org/Hagith/html5-skeleton.svg)](https://david-dm.org/Hagith/html5-skeleton) [![dependencies](https://david-dm.org/Hagith/html5-skeleton/dev-status.png)](https://david-dm.org/Hagith/html5-skeleton#info=devDependencies)
+# HTML5 Skeleton [![dependencies](https://img.shields.io/david/Hagith/html5-skeleton.svg)](https://david-dm.org/Hagith/html5-skeleton) [![devDependencies](https://img.shields.io/david/dev/Hagith/html5-skeleton.svg)](https://david-dm.org/Hagith/html5-skeleton#info=devDependencies)
 
 Simple skeleton app for quick development of multi page HTML5 websites.
 
