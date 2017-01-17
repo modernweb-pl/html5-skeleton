@@ -1,8 +1,5 @@
 nbproject
-
-.idea/workspace.xml
-.idea/watcherTasks.xml
-
+.idea
 node_modules
 build
 app/styles/config/_sprites.scss
