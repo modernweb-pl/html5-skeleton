@@ -47,5 +47,9 @@
   },
   "engines": {
     "node": ">=0.12"
+  },
+  "scripts": {
+    "start": "gulp server",
+    "build": "gulp build"
   }
 }
