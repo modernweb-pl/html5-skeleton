@@ -79,7 +79,6 @@ module.exports = {
 
   connect: { // https://github.com/avevlad/gulp-connect#api
     root: [paths.build, paths.src],
-    host: '*',
     port: 9000
   },
 
