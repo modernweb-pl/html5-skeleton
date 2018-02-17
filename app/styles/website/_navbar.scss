@@ -1,11 +1,9 @@
 .navbar {
-  border-radius: $navbar-border-radius;
+  border-radius: $border-radius;
 }
 
 .navbar-brand {
-  padding: 5px 10px;
-
   img {
-    height: $navbar-height - 10;
+    height: $navbar-brand-height;
   }
 }

@@ -9,9 +9,10 @@
     "url": "https://github.com/Hagith/html5-skeleton.git"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3.7",
+    "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
   },
   "devDependencies": {
     "browserify": "^16.0.0",
@@ -38,6 +39,7 @@
     "gulp.spritesmith": "^6.9.0",
     "lodash": "^4.17.5",
     "merge-stream": "^1.0.1",
+    "node-sass-tilde-importer": "^1.0.1",
     "partialify": "^3.1.6",
     "pretty-hrtime": "^1.0.3",
     "require-dir": "^1.0.0",

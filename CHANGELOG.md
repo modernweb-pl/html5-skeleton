@@ -1,5 +1,8 @@
 # HTML5 Skeleton Changelog
 
+## 0.4.0 (2018-02-17)
+* Upgrade to [Bootstrap 4](https://github.com/twbs/bootstrap)
+
 ## 0.3.1 (2018-02-17)
   * added [partialify](https://github.com/bclinkinbeard/partialify)
   * updated dependencies + package-lock.json
