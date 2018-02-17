@@ -1,4 +1,4 @@
-# HTML5 Skeleton [![dependencies](https://img.shields.io/david/Hagith/html5-skeleton.svg)](https://david-dm.org/Hagith/html5-skeleton) [![devDependencies](https://img.shields.io/david/dev/Hagith/html5-skeleton.svg)](https://david-dm.org/Hagith/html5-skeleton#info=devDependencies)
+# HTML5 Skeleton [![dependencies][deps-badge]][deps] [![devDependencies][dev-deps-badge]][dev-deps]
 
 Simple skeleton app for quick development of multi page HTML5 websites.
 
@@ -25,3 +25,8 @@ Open http://localhost:9000/ in your browser and you're ready to go! :)
 * 2015-02-22   0.2.1   Fix sprites
 * 2014-06-14   0.2.0   Include html partials and replace variables, bootstrap update to 3.1.1, build date in dist files
 * 2015-06-13   0.1.0   Initial version.
+
+[deps]: https://david-dm.org/Hagith/html5-skeleton
+[deps-badge]: https://img.shields.io/david/Hagith/html5-skeleton.svg
+[dev-deps]: https://david-dm.org/Hagith/html5-skeleton?type=dev
+[dev-deps-badge]: https://img.shields.io/david/dev/Hagith/html5-skeleton.svg
