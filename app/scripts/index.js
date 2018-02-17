@@ -1,4 +1,5 @@
 'use strict';
 
 window.jQuery = window.$ = require('jquery');
-require('bootstrap-sass');
+window.Popper = require('popper.js');
+require('bootstrap');

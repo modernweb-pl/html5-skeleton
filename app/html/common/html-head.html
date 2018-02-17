@@ -1,28 +1,31 @@
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="@@metaDescription">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="@@metaDescription">
 
-    <title>@@metaTitle</title>
+  <title>@@metaTitle</title>
 
-    <link href="styles/app.css" rel="stylesheet">
+  <link href="/styles/app.css" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-    <script type="text/javascript">
-        var $buoop = {};
-        $buoop.ol = window.onload;
-        window.onload=function(){
-            try {if ($buoop.ol) $buoop.ol();}catch (e) {}
-            var e = document.createElement("script");
-            e.setAttribute("type", "text/javascript");
-            e.setAttribute("src", "//browser-update.org/update.js");
-            document.body.appendChild(e);
-        }
-    </script>
-    <![endif]-->
+  <script type="text/javascript">
+    // http://browser-update.org/
+    var $buoop = {notify: {i: -5, f: -4, o: -4, s: -2, c: -4}, insecure: true, api: 5};
 
-    @@if (context.gaAccount) {
-      @@include('analytics.html')
+    function $buo_f() {
+      var e = document.createElement("script");
+      e.src = "//browser-update.org/update.min.js";
+      document.body.appendChild(e);
     }
+
+    try {
+      document.addEventListener("DOMContentLoaded", $buo_f, false)
+    } catch (e) {
+      window.attachEvent("onload", $buo_f)
+    }
+  </script>
+
+  @@if (context.gaAccount) {
+    @@include('analytics.html')
+  }
 </head>

@@ -1,5 +1,5 @@
 $fa-font-path: "../fonts/font-awesome" !default;
-@import "font-awesome";
+@import "~font-awesome/scss/font-awesome";
 
 // example usage of font-face mixin
 // @include font-face('Raleway', 'fonts/raleway/raleway-regular');

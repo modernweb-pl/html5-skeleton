@@ -4,7 +4,7 @@ Simple skeleton app for quick development of multi page HTML5 websites.
 
 ## Contents
 - NPM
-- Bootstrap 3 (SASS)
+- Bootstrap 4
 - Spritesmith
 - Font Awesome
 - jQuery
@@ -14,7 +14,7 @@ Simple skeleton app for quick development of multi page HTML5 websites.
 ## Setup
 ```
 npm install
-gulp server
+npm start
 ```
 
 Open http://localhost:9000/ in your browser and you're ready to go! :)

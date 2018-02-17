@@ -42,10 +42,7 @@ module.exports = {
     src: paths.styles,
     dest: path.join(paths.build, dirs.styles),
     options: {
-      includePaths: [
-        paths.vendor + '/bootstrap-sass/assets/stylesheets',
-        paths.vendor + '/font-awesome/scss'
-      ]
+      importer: require('node-sass-tilde-importer'),
     },
     autoprefixer: {
       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
@@ -85,7 +82,6 @@ module.exports = {
   fonts: {
     dest: path.join(paths.build, dirs.fonts),
     vendors: {
-      'bootstrap': paths.vendor + '/bootstrap-sass/assets/fonts/bootstrap/*',
       'font-awesome': paths.vendor + '/font-awesome/fonts/*'
     }
   },
