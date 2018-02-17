@@ -50,6 +50,7 @@
   },
   "scripts": {
     "start": "gulp server",
-    "build": "gulp build"
+    "build": "gulp build",
+    "zip": "gulp zip"
   }
 }
