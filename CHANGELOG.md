@@ -1,5 +1,8 @@
 # HTML5 Skeleton Changelog
 
+## 0.4.1 (2018-02-17)
+* Fix crash in node 10 ([details](https://github.com/gulpjs/gulp/issues/2162))
+
 ## 0.4.0 (2018-02-17)
 * Upgrade to [Bootstrap 4](https://github.com/twbs/bootstrap)
 
