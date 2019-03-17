@@ -1,0 +1,30 @@
+// some bootstrap components for testing
+
+.container
+
+  .dropdown
+    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle(
+    type="button"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false") Dropdown button
+      .dropdown-menu(aria-labelledby="dropdownMenuButton")
+        a.dropdown-item(href="#") Action
+        a.dropdown-item(href="#") Another action
+        a.dropdown-item(href="#") Something else here
+
+  a.btn.btn-lg.btn-danger(
+  href='#'
+  role="button"
+  data-toggle="popover"
+  data-trigger="focus"
+  title="Popover title"
+  data-content="And here's some amazing content. It's very engaging. Right?")
+    | Click to toggle popover
+
+  button.btn.btn-secondary.d-block(
+  type="button"
+  data-toggle="tooltip"
+  data-placement="top"
+  title="Tooltip on top")
+    | Tooltip on top

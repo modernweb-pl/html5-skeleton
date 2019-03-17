@@ -1,0 +1,29 @@
+.container
+  h2.site-name.text-muted Project name
+
+  nav.navbar.navbar-expand-md.navbar-light.bg-light.border.mb-3
+    a.navbar-brand.text-muted(href="/")
+      img(src="assets/html5_skeleton.png" alt="HTML5 Skeleton")
+
+    button.navbar-toggler(
+    type="button"
+    data-toggle="collapse"
+    data-target="#main-nav"
+    aria-controls="main-nav"
+    aria-expanded="false"
+    aria-label="Toggle navigation")
+      span.navbar-toggler-icon
+
+    #main-nav.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item(class=(active === 'projects' ? 'active' : ''))
+          a.nav-link(href="subpage.pug") Projects
+
+        li.nav-item(class=(active === 'downloads' ? 'active' : ''))
+          a.nav-link(href="subpage.pug") Downloads
+
+        li.nav-item(class=(active === 'about' ? 'active' : ''))
+          a.nav-link(href="subpage.pug") About
+
+        li.nav-item(class=(active === 'contact' ? 'active' : ''))
+          a.nav-link(href="subpage.pug") Contact

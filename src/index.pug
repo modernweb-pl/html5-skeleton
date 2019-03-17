@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+  include html/common/html-head
+  body
+    .wrapper
+      include html/site/header
+      .container
+        .jumbotron
+          h1.display-4 Hello World!
+            p.lead
+              | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus,
+              | tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.
+            p
+              a.btn.btn-lg.btn-success(href="subpage.pug" role="button")
+                | Get started today #[span.fa.fa-check]
+        .row
+          .col-md-8
+            header
+              h2 Sprite test
+            article
+              p.sprite-test
+
+              p
+                | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                | commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam
+                | porta sem malesuada magna mollis euismod. Donec sed odio dui.
+
+              p
+                a.btn.btn-primary(href="#" role="button")
+                  | View details #[i.fa.fa-angle-double-right]
+          .col-md-4
+            include html/site/sidebar
+
+      include html/site/footer
+
+    include html/common/scripts

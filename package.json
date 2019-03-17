@@ -9,8 +9,11 @@
     "url": "https://github.com/Hagith/html5-skeleton.git"
   },
   "scripts": {
-    "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html"
+    "clean": "rimraf .cache dist",
+    "predev": "yarn clean",
+    "dev": "parcel src/*.pug",
+    "prebuild": "yarn clean",
+    "build": "parcel build src/*.pug"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
@@ -19,7 +22,11 @@
     "popper.js": "^1.12.9"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.2"
+    "@babel/core": "^7.3.4",
+    "parcel-bundler": "^1.12.2",
+    "pug": "^2.0.3",
+    "rimraf": "^2.6.3",
+    "sass": "^1.17.3"
   },
   "engines": {
     "node": ">=10"

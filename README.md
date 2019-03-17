@@ -3,21 +3,21 @@
 Simple skeleton app for quick development of multi page HTML5 websites.
 
 ## Contents
-- NPM
+
+- Yarn
 - Bootstrap 4
-- Spritesmith
 - Font Awesome
 - jQuery
-- Gulp
-- Browserify
+- Parcel
+- Pug
 
-## Setup
+## Usage
 ```
-npm install
-npm start
+yarn
+yarn dev
 ```
 
-Open http://localhost:9000/ in your browser and you're ready to go! :)
+Open http://localhost:1234/ in your browser and you're ready to go! :)
 
 ## Release History
 
