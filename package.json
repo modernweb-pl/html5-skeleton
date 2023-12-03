@@ -8,6 +8,14 @@
     "type": "git",
     "url": "https://github.com/Hagith/html5-skeleton.git"
   },
+  "scripts": {
+    "start": "gulp server",
+    "build": "gulp build",
+    "zip": "gulp zip"
+  },
+  "engines": {
+    "node": ">=8.9 <=10"
+  },
   "dependencies": {
     "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
@@ -46,13 +54,5 @@
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.10.0"
-  },
-  "engines": {
-    "node": ">=8.9 <=10"
-  },
-  "scripts": {
-    "start": "gulp server",
-    "build": "gulp build",
-    "zip": "gulp zip"
   }
 }
