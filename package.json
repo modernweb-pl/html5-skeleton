@@ -48,7 +48,7 @@
     "watchify": "^3.10.0"
   },
   "engines": {
-    "node": ">=8.9"
+    "node": ">=8.9 <=10"
   },
   "scripts": {
     "start": "gulp server",
