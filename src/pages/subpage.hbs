@@ -1,10 +1,10 @@
 <!doctype html>
-<html>
-@@include('html/common/html-head.html')
+<html lang="en">
+{{> "includes/global/html-head.hbs" }}
 <body>
 
 <div id="wrapper">
-  @@include('html/site/header.html', {"nav-active-2": "active"})
+  {{> "includes/site/header.hbs" navActive2='active' }}
 
   <div class="container">
     <div class="row">
@@ -18,14 +18,14 @@
         </header>
       </section>
       <div class="col-lg-4">
-        @@include('html/site/sidebar.html')
+        {{> "includes/site/sidebar.hbs" }}
       </div>
     </div>
   </div>
 
-  @@include('html/site/footer.html')
+  {{> "includes/site/footer.hbs" }}
 </div>
 
-@@include('html/common/scripts.html')
+{{> "includes/global/scripts.hbs" }}
 </body>
 </html>

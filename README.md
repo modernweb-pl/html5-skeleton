@@ -1,20 +1,18 @@
-# HTML5 Skeleton [![dependencies][deps-badge]][deps] [![devDependencies][dev-deps-badge]][dev-deps]
+# HTML5 Skeleton
 
-Simple skeleton app for quick development of multi page HTML5 websites.
+Simple skeleton app for quick development of multi page static websites.
 
 ## Contents
-- NPM
-- Bootstrap 4
-- Spritesmith
-- Font Awesome
-- jQuery
-- Gulp
-- Browserify
+- [pnpm](https://pnpm.io/)
+- [Vite.js](https://v4.vitejs.dev/)
+- [Vituum](https://vituum.dev/)
+- [Bootstrap 4](https://getbootstrap.com/docs/4.6/)
+- [Font Awesome 4](https://fontawesome.com/v4/icons/)
 
 ## Setup
 ```
-npm install
-npm start
+pnpm install
+pnpm dev
 ```
 
 Open http://localhost:9000/ in your browser and you're ready to go! :)
@@ -22,8 +20,3 @@ Open http://localhost:9000/ in your browser and you're ready to go! :)
 ## Release History
 
 Please see [CHANGELOG](CHANGELOG.md)
-
-[deps]: https://david-dm.org/Hagith/html5-skeleton
-[deps-badge]: https://img.shields.io/david/Hagith/html5-skeleton.svg
-[dev-deps]: https://david-dm.org/Hagith/html5-skeleton?type=dev
-[dev-deps-badge]: https://img.shields.io/david/dev/Hagith/html5-skeleton.svg

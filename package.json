@@ -6,11 +6,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Hagith/html5-skeleton.git"
+    "url": "https://github.com/modernweb-pl/html5-skeleton"
   },
   "scripts": {
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
   },
+  "type": "module",
   "engines": {
     "node": ">=18"
   },
@@ -20,5 +24,11 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^20.10.2",
+    "@vituum/vite-plugin-handlebars": "^1.1.0",
+    "sass": "^1.69.5",
+    "vite": "^4.5.0",
+    "vituum": "^1.1.0"
+  }
 }
