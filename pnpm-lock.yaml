@@ -6,17 +6,17 @@ settings:
 
 dependencies:
   bootstrap:
-    specifier: ^4.0.0
-    version: 4.0.0(jquery@3.3.1)(popper.js@1.12.9)
+    specifier: ^4.6.2
+    version: 4.6.2(jquery@3.5.1)(popper.js@1.16.1-lts)
   font-awesome:
     specifier: ^4.7.0
     version: 4.7.0
   jquery:
-    specifier: ^3.3.1
-    version: 3.3.1
+    specifier: ^3.5.1
+    version: 3.5.1
   popper.js:
-    specifier: ^1.12.9
-    version: 1.12.9
+    specifier: ^1.16.1-lts
+    version: 1.16.1-lts
 
 devDependencies:
   '@types/node':
@@ -591,15 +591,14 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /bootstrap@4.0.0(jquery@3.3.1)(popper.js@1.12.9):
-    resolution: {integrity: sha512-gulJE5dGFo6Q61V/whS6VM4WIyrlydXfCgkE+Gxe5hjrJ8rXLLZlALq7zq2RPhOc45PSwQpJkrTnc2KgD6cvmA==}
-    engines: {node: '>=6'}
+  /bootstrap@4.6.2(jquery@3.5.1)(popper.js@1.16.1-lts):
+    resolution: {integrity: sha512-51Bbp/Uxr9aTuy6ca/8FbFloBUJZLHwnhTcnjIeRn2suQWsWzcuJhGjKDB5eppVte/8oCdOL3VuwxvZDUggwGQ==}
     peerDependencies:
       jquery: 1.9.1 - 3
-      popper.js: ^1.12.9
+      popper.js: ^1.16.1
     dependencies:
-      jquery: 3.3.1
-      popper.js: 1.12.9
+      jquery: 3.5.1
+      popper.js: 1.16.1-lts
     dev: false
 
   /brace-expansion@2.0.1:
@@ -775,8 +774,8 @@ packages:
     engines: {node: '>=0.12.0'}
     dev: true
 
-  /jquery@3.3.1:
-    resolution: {integrity: sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==}
+  /jquery@3.5.1:
+    resolution: {integrity: sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==}
     dev: false
 
   /lodash@4.17.21:
@@ -831,9 +830,8 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /popper.js@1.12.9:
-    resolution: {integrity: sha512-s0EEi9xiSCdqz9lV4IiVH5yIZnDX/U1t0tCjB+0jXx9jW8lrR7kOpVupiUg175ogqVoudpDXHF1p6dKATCHMeg==}
-    deprecated: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+  /popper.js@1.16.1-lts:
+    resolution: {integrity: sha512-Kjw8nKRl1m+VrSFCoVGPph93W/qrSO7ZkqPpTf7F4bk/sqcfWK019dWBUpE/fBOsOQY1dks/Bmcbfn1heM/IsA==}
     dev: false
 
   /postcss@8.4.32:
