@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+{{> "includes/global/html-head.hbs" }}
+<body>
+<div id="wrapper">
+  {{> "includes/site/header.hbs" navActive1='active' }}
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Hello World!</h1>
+
+      <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus,
+        tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+        amet.</p>
+
+      <p>
+        <a class="btn btn-lg btn-success" href="subpage" role="button">
+          Get started today
+          <span class="fa fa-check" aria-hidden="true"></span>
+        </a>
+      </p>
+    </div>
+
+    <div class="row">
+      <section class="col-md-8">
+        <header>
+          <h2>Web Tech</h2>
+        </header>
+        <article>
+          <img src="images/html5css3.png" alt="HTML5+CSS3+ES6"/>
+
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam
+            porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+
+          <p><a class="btn btn-primary" href="#" role="button">
+            View details
+            <i class="fa fa-angle-double-right"></i>
+          </a></p>
+        </article>
+      </section>
+      <div class="col-md-4">
+        {{> "includes/site/sidebar.hbs" }}
+      </div>
+    </div>
+  </div>
+
+  {{> "includes/site/footer.hbs" }}
+</div>
+
+{{> "includes/global/scripts.hbs" }}
+</body>
+</html>

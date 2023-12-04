@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+{{> "includes/global/html-head.hbs" }}
+<body>
+
+<div id="wrapper">
+  {{> "includes/site/header.hbs" navActive2='active' }}
+
+  <div class="container">
+    <div class="row">
+      <section class="col-lg-8">
+        <header>
+          <h1>Hi! It's just simple test subpage!</h1>
+
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam
+            porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        </header>
+      </section>
+      <div class="col-lg-4">
+        {{> "includes/site/sidebar.hbs" }}
+      </div>
+    </div>
+  </div>
+
+  {{> "includes/site/footer.hbs" }}
+</div>
+
+{{> "includes/global/scripts.hbs" }}
+</body>
+</html>
